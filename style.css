@@ -1,0 +1,58 @@
+
+.heading{
+    text-align: center;
+    color: white;
+    
+}
+
+.subHeading{
+    color:#CCCCCC;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.link{
+    color: #2A6496;
+    font-weight: 500;
+}
+
+.boldHeading{
+    color: white;
+    font-weight: 700;
+}
+
+
+.hLine{
+    height: 1px; 
+    background-color: #494A4B; 
+   
+}
+
+
+.image{
+    border: 5px solid white; 
+    border-radius: 2px;
+}
+
+
+.imgName{
+    color: white; 
+    font-size: 16px; 
+    font-weight: 600;
+}
+
+.imgYear{
+    color: #919191; 
+    font-size: 15px; 
+    font-weight: 400;
+}
+
+.highlight{
+    color: white; 
+    background-color: #731407;
+}
+
+.ad{
+    background-color: black; 
+    border: 4px solid #75C74E;
+}
