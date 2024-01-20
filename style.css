@@ -32,6 +32,7 @@
 .image{
     border: 5px solid white; 
     border-radius: 2px;
+    cursor: pointer;
 }
 
 
@@ -39,6 +40,11 @@
     color: white; 
     font-size: 16px; 
     font-weight: 600;
+    cursor: pointer;
+}
+
+.imgName:hover{
+    color: blue;
 }
 
 .imgYear{
