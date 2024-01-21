@@ -160,7 +160,7 @@
                         ];
                         var html = '';
                         for (let i = 0; i < popularMovies.length; i++) {
-                            html += ' <div class="col-3"><img onclick="redirectToDetail(\'' + popularMovies[i].name + '\')" src="' + popularMovies[i].image + '" class="image" /><span class="imgName">' + popularMovies[i].name + '</span><br /><span class="imgYear">' + popularMovies[i].year + '</span></div>'
+                            html += ' <div class="col-3"><img onclick="redirectToDetail(\'' + popularMovies[i].name + '\',\'' + popularMovies[i].year + '\',\'' + popularMovies[i].image + '\')" src="' + popularMovies[i].image + '" class="image" /><span class="imgName">' + popularMovies[i].name + '</span><br /><span class="imgYear">' + popularMovies[i].year + '</span></div>'
                         }
                         document.getElementById('popularMoviesContainer').innerHTML = html;
                     }
@@ -240,16 +240,15 @@
                             }
                         ];
                         for (let i = 0; i < latestMovies.length; i++) {
-                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + latestMovies[i].name + '\')" src="' + latestMovies[i].image + '" class="image" /> <span class="imgName">' + latestMovies[i].name + '</span><br /> <span class="imgYear">' + latestMovies[i].year + '</span></div>';
+                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + latestMovies[i].name + '\',\'' + latestMovies[i].year + '\',\'' + latestMovies[i].image + '\')" src="' + latestMovies[i].image + '" class="image" /> <span class="imgName">' + latestMovies[i].name + '</span><br /> <span class="imgYear">' + latestMovies[i].year + '</span></div>';
                         }
                         document.getElementById('latestMovies').innerHTML = html;
                     }
 
 
 
-
-                    function redirectToDetail(movieName) {
-                        window.location.href = './details.html?name=' + movieName;
+                    function redirectToDetail(movieName, movieYear, movieImage) {
+                        window.location.href = './details.html?name=' + movieName + '&year=' + movieYear + '&image=' + movieImage;
                     }
 
 
