@@ -69,79 +69,13 @@
             </div>
         </div>
     </div>
-
     <div class="col-12" style="background-color: #1D1D1D; padding-bottom: 20px; padding-top: 30px;">
         <div class="container">
             <div class="row">
                 <div class="col-6 imgName">Latest YIFY Movies Torrents</div>
                 <div class="col-6" style="text-align: right; color: #919191; font-weight: 600;">Browse All</div>
             </div>
-            <div class="row mt-2">
-
-                <!-- just delete the below data so it will come from js array and give ID to above row div and use that id in your javascript code, see line number 189 -->
-                <div class="col-3">
-                    <img src="./assets/movies-posters/5.jpg" class="image" />
-                    <span class="imgName">Simone:Woman of the ...</span>
-                    <br />
-                    <span class="imgYear">2022</span>
-
-                </div>
-                <div class="col-3">
-                    <img src="./assets/movies-posters/6.jpg" class="image" />
-                    <span class="imgName">Fire in Babylon</span>
-                    <br />
-                    <span class="imgYear">2010</span>
-                </div>
-
-                <div class="col-3">
-                    <img src="./assets/movies-posters/7.jpg" class="image" />
-                    <span class="imgName">Marci X</span>
-                    <br />
-                    <span class="imgYear">2003</span>
-
-                </div>
-
-                <div class="col-3">
-                    <img src="./assets/movies-posters/8.jpg" class="image" />
-                    <span class="imgName">Paradise Lagoon</span>
-                    <br />
-                    <span class="imgYear">1957</span>
-
-                </div>
-
-
-            </div>
-            <div class="row mt-2">
-                <div class="col-3">
-                    <img src="./assets/movies-posters/9.jpg" class="image" />
-                    <span class="imgName"> Stalking Laura</span>
-                    <br />
-                    <span class="imgYear">1993</span>
-
-                </div>
-                <div class="col-3">
-                    <img src="./assets/movies-posters/10.jpg" class="image" />
-                    <span class="imgName">Hellhound</span>
-                    <br />
-                    <span class="imgYear">2024</span>
-                </div>
-
-                <div class="col-3">
-                    <img src="./assets/movies-posters/11.jpg" class="image" />
-                    <span class="imgName">De force</span>
-                    <br />
-                    <span class="imgYear">2011</span>
-
-                </div>
-
-                <div class="col-3">
-                    <img src="./assets/movies-posters/12.jpg" class="image" />
-                    <span class="imgName">Self Reliance</span>
-                    <br />
-                    <span class="imgYear">2023</span>
-
-                </div>
-
+            <div class="row mt-2" id="latestMovies">
 
             </div>
         </div>
@@ -154,6 +88,7 @@
 
                 <div class="row mt-2" id="upcoming1">
                 </div>
+                <!-- !upcoming mvoies row 2 -->
                 <div class="row mt-2">
                     <div class="col-3">
                         <img src="./assets/movies-posters/17.jpg" class="image" />
@@ -195,6 +130,7 @@
                 <script>
                     populatePopularMovies();
                     populateUpcomingMovies1();
+                    populateLatestMovies();
 
                     function populatePopularMovies() {
                         document.getElementById('heading').innerHTML = 'Download YTS YIFY movies: HD smallest size';
@@ -228,11 +164,7 @@
                         }
                         document.getElementById('popularMoviesContainer').innerHTML = html;
                     }
-
-
-                  
-
-
+                    //it populates upcoming movies first row
                     function populateUpcomingMovies1() {
                         // you need to write your JS code here
                         var upcomingMovies1 = [
@@ -263,12 +195,64 @@
                         }
                         document.getElementById('upcoming1').innerHTML = html1;
                     }
-
-                    function redirectToDetail(movieName) {
-                        window.location.href = './details.html?name='+movieName;
+                    function populateLatestMovies() {
+                        var html = '';
+                        var latestMovies = [
+                            {
+                                image: './assets/movies-posters/5.jpg',
+                                name: 'Simone:Woman of the ...',
+                                year: 2022
+                            },
+                            {
+                                image: './assets/movies-posters/6.jpg',
+                                name: 'Fire in Babylon',
+                                year: 2010
+                            },
+                            {
+                                image: './assets/movies-posters/7.jpg',
+                                name: 'Marci X',
+                                year: 2003
+                            },
+                            {
+                                image: './assets/movies-posters/8.jpg',
+                                name: 'Paradise Lagoon',
+                                year: 1957
+                            },
+                            {
+                                image: './assets/movies-posters/9.jpg',
+                                name: 'Stalking Laura',
+                                year: 1993
+                            },
+                            {
+                                image: './assets/movies-posters/10.jpg',
+                                name: 'Hellhound',
+                                year: 2024
+                            },
+                            {
+                                image: './assets/movies-posters/11.jpg',
+                                name: 'De force',
+                                year: 2011
+                            },
+                            {
+                                image: './assets/movies-posters/12.jpg',
+                                name: 'Self Reliance',
+                                year: 2023
+                            }
+                        ];
+                        for (let i = 0; i < latestMovies.length; i++) {
+                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + latestMovies[i].name + '\')" src="' + latestMovies[i].image + '" class="image" /> <span class="imgName">' + latestMovies[i].name + '</span><br /> <span class="imgYear">' + latestMovies[i].year + '</span></div>';
+                        }
+                        document.getElementById('latestMovies').innerHTML = html;
                     }
 
-                   
+
+
+
+                    function redirectToDetail(movieName) {
+                        window.location.href = './details.html?name=' + movieName;
+                    }
+
+
 
                 </script>
 
