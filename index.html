@@ -88,8 +88,8 @@
 
                 <div class="row mt-2" id="upcoming1">
                 </div>
-                <!-- !upcoming mvoies row 2 -->
-                <div class="row mt-2">
+                <!-- !upcoming movies row 2 -->
+                <div class="row mt-2" id="upcoming2">
                     <div class="col-3">
                         <img src="./assets/movies-posters/17.jpg" class="image" />
                         <span class="imgName">Lost Phoenix</span>
@@ -131,7 +131,7 @@
                     populatePopularMovies();
                     populateUpcomingMovies1();
                     populateLatestMovies();
-
+                    upcomingMovies2();
                     function populatePopularMovies() {
                         document.getElementById('heading').innerHTML = 'Download YTS YIFY movies: HD smallest size';
                         document.getElementById('subHeading').innerHTML = 'Welcome to the official YTS.MX website. Here you can browse and download YIFY movies in excellent <br> 720p, 1080p, 2160p 4K and 3D quality, all at the smallest file size. YTS Movies Torrents. <br> <a class="link" href="">IMPORTANT - YTS.MX is the only new official domain for YIFY Movies</a>';
@@ -245,7 +245,36 @@
                         document.getElementById('latestMovies').innerHTML = html;
                     }
 
-
+                    function upcomingMovies2() {
+                        var html = '';
+                        var upcomingMovies2 = [
+                            {
+                                image: './assets/movies-posters/17.jpg',
+                                name: 'Lost Phoenix',
+                                year: 2023
+                            },
+                            {
+                                image: './assets/movies-posters/18.jpg',
+                                name: 'Conan the Barbarian',
+                                year: 1982
+                            },
+                            {
+                                image: './assets/movies-posters/19.jpg',
+                                name: 'Wonka',
+                                year: 2023
+                            },
+                            {
+                                image: './assets/movies-posters/20.jpg',
+                                name: 'The Marvels',
+                                year: 2023
+                           
+                            }
+                        ];
+                        for (let i = 0; i < upcomingMovies2.length; i++) {
+                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + upcomingMovies2[i].name + '\',\'' + upcomingMovies2[i].year + '\',\'' + upcomingMovies2[i].image + '\')" src="' + upcomingMovies2[i].image + '" class="image" /> <span class="imgName">' + upcomingMovies2[i].name + '</span><br /> <span class="imgYear">' + upcomingMovies2[i].year + '</span></div>';
+                        }
+                        document.getElementById('upcoming2').innerHTML = html;
+                    }
 
                     function redirectToDetail(movieName, movieYear, movieImage) {
                         window.location.href = './details.html?name=' + movieName + '&year=' + movieYear + '&image=' + movieImage;
