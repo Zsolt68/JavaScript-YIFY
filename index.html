@@ -191,7 +191,7 @@
                         ];
                         html1 = '';
                         for (let i = 0; i < upcomingMovies1.length; i++) {
-                            html1 += '<div class="col-3"><img src="' + upcomingMovies1[i].image + '" class="image" /> <br/><span class="imgName">' + upcomingMovies1[i].name + '</span> <br /><span class="imgYear">' + upcomingMovies1[i].year + '</span> </div>'
+                            html1 += '<div class="col-3"><img onclick="redirectToDetail(\'' + upcomingMovies1[i].name + '\',\'' + upcomingMovies1[i].year + '\',\'' + upcomingMovies1[i].image + '\')" src="' + upcomingMovies1[i].image + '" class="image" /><span class="imgName">' + upcomingMovies1[i].name + '</span><br /><span class="imgYear">' + upcomingMovies1[i].year + '</span></div>'
                         }
                         document.getElementById('upcoming1').innerHTML = html1;
                     }
