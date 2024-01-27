@@ -66,9 +66,9 @@
                     </div>
                 </div>
                 <div class="col-4" style="padding-left: 50px;">
-                    <span class="detailImgYear mt-4">Simone:Woman of the ...</span>
+                    <span class="detailImgYear mt-4" id="sName"></span>
                     <br />
-                    <img class="image" style="width: 40%;" src="./assets/movies-posters/1.jpg" />
+                    <img class="image" id="sImage" style="width: 40%;" src="./assets/movies-posters/1.jpg" />
                 </div>
             </div>
             <div class="row mt-4">
@@ -87,9 +87,13 @@
         var nameOfMovie = queryParam.get('name');
         var yearOfMovie = queryParam.get('year');
         var imageOfMovie = queryParam.get('image');
+        var sName = queryParam.get('sname');
+        var sImage = queryParam.get('simage');
         document.getElementById('heading').innerHTML = nameOfMovie;
         document.getElementById('yearSpan').innerHTML = yearOfMovie;
         document.getElementById('image').src = imageOfMovie;
+        document.getElementById('sName').innerHTML = sName;
+        document.getElementById('sImage').src = sImage;
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

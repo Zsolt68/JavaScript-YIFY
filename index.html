@@ -90,35 +90,7 @@
                 </div>
                 <!-- !upcoming movies row 2 -->
                 <div class="row mt-2" id="upcoming2">
-                    <div class="col-3">
-                        <img src="./assets/movies-posters/17.jpg" class="image" />
-                        <span class="imgName">Lost Phoenix</span>
-                        <br />
-                        <span class="imgYear">2023</span>
 
-                    </div>
-                    <div class="col-3">
-                        <img src="./assets/movies-posters/18.jpg" class="image" />
-                        <span class="imgName">Conan the Barbarian</span>
-                        <br />
-                        <span class="imgYear">1982</span>
-                    </div>
-
-                    <div class="col-3">
-                        <img src="./assets/movies-posters/19.jpg" class="image" />
-                        <span class="imgName">Wonka</span>
-                        <br />
-                        <span class="imgYear">2023</span>
-
-                    </div>
-
-                    <div class="col-3">
-                        <img src="./assets/movies-posters/20.jpg" class="image" />
-                        <span class="imgName">The Marvels</span>
-                        <br />
-                        <span class="imgYear">2023</span>
-
-                    </div>
                 </div>
 
                 <div class="col-12" style="background-color:   #171717;">
@@ -267,17 +239,18 @@
                                 image: './assets/movies-posters/20.jpg',
                                 name: 'The Marvels',
                                 year: 2023
-                           
+
                             }
                         ];
+                        let randomNumber = Math.floor(Math.random() * upcomingMovies2.length);
+
                         for (let i = 0; i < upcomingMovies2.length; i++) {
-                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + upcomingMovies2[i].name + '\',\'' + upcomingMovies2[i].year + '\',\'' + upcomingMovies2[i].image + '\')" src="' + upcomingMovies2[i].image + '" class="image" /> <span class="imgName">' + upcomingMovies2[i].name + '</span><br /> <span class="imgYear">' + upcomingMovies2[i].year + '</span></div>';
+                            html += '<div class="col-3 mt-2"> <img onclick="redirectToDetail(\'' + upcomingMovies2[i].name + '\',\'' + upcomingMovies2[i].year + '\',\'' + upcomingMovies2[i].image + '\',\'' + upcomingMovies2[randomNumber].name + '\',\'' + upcomingMovies2[randomNumber].image + '\')" src="' + upcomingMovies2[i].image + '" class="image" /> <span class="imgName">' + upcomingMovies2[i].name + '</span><br /> <span class="imgYear">' + upcomingMovies2[i].year + '</span></div>';
                         }
                         document.getElementById('upcoming2').innerHTML = html;
                     }
-
-                    function redirectToDetail(movieName, movieYear, movieImage) {
-                        window.location.href = './details.html?name=' + movieName + '&year=' + movieYear + '&image=' + movieImage;
+                    function redirectToDetail(movieName, movieYear, movieImage, sName, sImage) {
+                        window.location.href = './details.html?name=' + movieName + '&year=' + movieYear + '&image=' + movieImage + '&sname=' + sName + '&simage=' + sImage;
                     }
 
 
